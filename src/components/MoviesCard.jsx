@@ -8,7 +8,10 @@ const { id, title, director, abstract, image } = movie;
 
         <>
             <div className="card mb-4">
-                <img src={image} alt={title} />
+            <img 
+                src={image ? `http://localhost:5000/img/movies/${image}` : "/default.jpg"} 
+                alt={title} 
+            />
                 <div className="card-body">
                     <h5 className="card-title">{title}</h5>
                     <span>

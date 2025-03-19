@@ -4,6 +4,8 @@ import { useParams } from "react-router-dom"
 
 import ReviewCard from "../components/ReviewCard"
 
+import ReviewForm from "../components/ReviewForm"
+
 
 
 export default function MoviesPage() {
@@ -23,7 +25,7 @@ export default function MoviesPage() {
 
 
     const renderReviews = () => {
-        return book.reviews?.map((review) => {
+        return movie.reviews?.map((review) => {
           return <ReviewCard key={review.id} review={review} />;
         });
       };
@@ -32,13 +34,17 @@ export default function MoviesPage() {
 
         <>
         <h1 className="">{movie.title}</h1>
-        <img src={book?.image} alt={book?.title} />
+        <img src={`http://localhost:5000/img/movies/${movie.image}`} alt={movie.title} />
             { /*qui va paggina di movies */ }
 
         <section>
             <h4>Our community reviews</h4>
             {renderReviews()}
         </section>
+
+        <section>
+        { movie?.id && <ReviewForm movie_id={movie.id} reloadReviews={fetchMovies} /> }
+      </section>
 
         </>
     )

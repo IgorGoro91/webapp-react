@@ -35,8 +35,8 @@ export default function HomePage() {
         
             <h1 className="text-primary">Movies</h1>
             <div className="row row-cols-3">
-                <MoviesCard/>
-                {            }
+                {/* <MoviesCard/> */}
+                {/* {            } */}
                 {renderMovies() }
             </div>
         </>

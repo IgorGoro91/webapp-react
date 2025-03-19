@@ -1,17 +1,19 @@
 
 
-export default function ReviewCard({/*review*/}){
+export default function ReviewCard({review}){
 
-    // const {} = review
+    const {id, name, vote, text} = review
 
     return(
 
         <>
             <div className="card mb-4">
                 <div className="card-body">
+                    <h5>{name}</h5>
                     <p className="card-text">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab corporis nam minima dignissimos ratione corrupti, nulla minus quibusdam eius voluptatem velit et reiciendis earum sit vitae hic vel debitis odit!
+                        {text}
                     </p>
+                    <span> Voto: {vote}</span>
 
                 </div>
 
