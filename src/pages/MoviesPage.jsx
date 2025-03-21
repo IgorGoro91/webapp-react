@@ -3,8 +3,8 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 
 import ReviewCard from "../components/ReviewCard"
-
 import ReviewForm from "../components/ReviewForm"
+
 
 
 
@@ -33,18 +33,21 @@ export default function MoviesPage() {
     return(
 
         <>
-        <h1 className="">{movie.title}</h1>
+        <div className=" ">
+        <h1>{movie.title}</h1>
         <img src={`http://localhost:5000/img/movies/${movie.image}`} alt={movie.title} />
-            { /*qui va paggina di movies */ }
+            
+        </div>
+        
 
         <section>
-            <h4>Our community reviews</h4>
+            <h4>Our community reviews "Commenti"</h4>
             {renderReviews()}
         </section>
 
         <section>
-        { movie?.id && <ReviewForm movie_id={movie.id} reloadReviews={fetchMovies} /> }
-      </section>
+          { movie?.id && <ReviewForm movie_id={movie.id} reloadReviews={fetchMovies} /> }
+        </section>
 
         </>
     )
